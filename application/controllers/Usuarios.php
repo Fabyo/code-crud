@@ -15,44 +15,17 @@ class Usuarios extends CI_Controller
 	{
         $data['users'] = $this->user->listar();
 
-        //$config['base_url'] = 'http://code/usuarios/';
         $config["base_url"] =  base_url('usuarios');
         $config['total_rows'] = $this->user->count();
         $config['per_page'] = 20;
         $config["uri_segment"] = 3;
-        //$config['num_links'] = 2;
-
-        //$config['query_string_segment'] = 'page';
-        //$config['prefix'] = '?';
-        //$config['suffix'] = '?pages';        
-        //$config['use_page_numbers'] = TRUE;
-        //$config['page_query_string'] = TRUE;
-
         $choice = $config["total_rows"] / $config["per_page"];
-        //$config["num_links"] = round($choice);
-
-
         $config['full_tag_open'] = '<p>';
         $config['full_tag_close'] = '</p>';
         $config['first_link'] = 'Primeira';
-        //$config['first_tag_open'] = '<div>';
-        //$config['first_tag_close'] = '</div>';
         $config['last_link'] = 'Ultima';
-        //$config['last_tag_open'] = '<div>';
-        //$config['last_tag_close'] = '</div>';
         $config['cur_tag_open'] = '<b>';
         $config['cur_tag_close'] = '</b>';
-        //$config['num_tag_open'] = '<div>';
-        //$config['num_tag_close'] = '</div>';
-
-
-
-//$config['use_global_url_suffix'] = FALSE;
-//$config['attributes']['rel'] = FALSE;
-//$config['suffix'] = '?content='.$page;
-//$config['base_url'] = base_url().'usuarios/search/';
-
-
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_link'] = false;
@@ -83,8 +56,6 @@ class Usuarios extends CI_Controller
 		$this->load->view('header');
 		$this->load->view('usuarios/index', $data);
 		$this->load->view('footer');
-
-        //echo $this->pagination->create_links();
 	}
 
     function salvar() 
