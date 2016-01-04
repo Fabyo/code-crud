@@ -1,0 +1,26 @@
+{
+	"description": "The CodeIgniter framework",
+	"license": "MIT",
+    "repositories": [
+      {
+        "type": "package",
+        "package": {
+          "name": "bcit-ci/codeigniter",
+          "version": "2.2.6",
+          "dist": {
+            "type": "zip",
+            "url": "https://github.com/bcit-ci/CodeIgniter/archive/2.2.6.zip",
+            "reference": "2.2.6"
+          }
+        }
+      }
+    ],	
+	"require": {
+		"php": ">=5.3",
+		"bcit-ci/codeigniter": "2.2.6",
+		"fzaninotto/faker": "^1.5"
+	},
+	"require-dev": {
+		"mikey179/vfsStream": "1.1.*"
+	}
+}
